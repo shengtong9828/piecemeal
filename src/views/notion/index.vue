@@ -20,7 +20,17 @@
 					</el-col>
 					<el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
 						<el-form-item label-width="0px">
-							<el-button type="primary" @click="queryDatabase" icon="el-icon-thumb">点击执行</el-button>
+							<el-button type="primary" @click="queryDatabase" icon="el-icon-thumb">queryDatabase</el-button>
+						</el-form-item>
+					</el-col>
+					<el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+						<el-form-item label-width="0px">
+							<el-button type="primary" @click="retrieveDatabase" icon="el-icon-thumb">retrieveDatabase</el-button>
+						</el-form-item>
+					</el-col>
+					<el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6">
+						<el-form-item label-width="0px">
+							<el-button type="primary" @click="queryDaretrieveBlockChildrentabase" icon="el-icon-thumb">retrieveBlockChildren</el-button>
 						</el-form-item>
 					</el-col>
 				</el-row>
