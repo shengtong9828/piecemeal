@@ -1,16 +1,24 @@
-import './assets/main.css'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import axios from 'axios'
+import Particles from 'vue-particles';
+import Element from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import '@/theme/index.scss';
+import { i18n } from '@/i18n/index.js';
+import { globalComponentSize } from '@/utils/componentSize.js';
 
-import App from './App.vue'
-import router from './router'
+Vue.use(Particles);
+Vue.use(Element, { i18n: (key, value) => i18n.t(key, value), size: globalComponentSize });
 
-const app = createApp(App)
-app.provide('$axios', axios)
+Vue.config.productionTip = false;
+Vue.prototype.bus = new Vue();
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+new Vue({
+	router,
+	store,
+	i18n,
+	render: (h) => h(App),
+}).$mount('#app');
