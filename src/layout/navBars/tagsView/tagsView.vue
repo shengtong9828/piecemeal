@@ -296,6 +296,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/theme/media/index.scss';
 .layout-navbars-tagsview {
 	flex: 1;
 	background-color: var(--prev-bg-white);
@@ -303,6 +304,8 @@ export default {
 	& ::v-deep .is-vertical {
 		display: none !important;
 	}
+	/* 页面宽度小于768px */
+	@media screen and (max-width: $sm) { &-ul { overflow: auto; } }
 	&-ul {
 		list-style: none;
 		margin: 0;
