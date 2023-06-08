@@ -22,6 +22,11 @@
 						<el-button type="primary" @click="retrievePagePropertyItem" icon="el-icon-thumb">retrievePagePropertyItem</el-button>
 					</el-form-item>
 				</el-col>
+				<el-col :xs="24" :sm="12" :md="12" :lg="8" :xl="6" class="mb20">
+					<el-form-item label-width="0px">
+						<el-button type="primary" @click="printProcess" icon="el-icon-thumb">环境变量</el-button>
+					</el-form-item>
+				</el-col>
 			</el-row>
 		</el-form>
 		<el-table :data="tableData">
@@ -48,6 +53,9 @@ export default {
 		}
 	},
 	methods: {
+		printProcess() {
+			console.log(process.env);
+		},
 		retrievePage() {
 			this.loading = true
 			const params = {
